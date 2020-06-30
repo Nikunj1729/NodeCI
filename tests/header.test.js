@@ -18,7 +18,9 @@ test('Header has the correct text', async () => {
 test('Click on Login - OAuth flow', async () => {
   await page.click('.right a');
   const url = await page.url();
-  expect(url).toMatch(/accounts\.google\.com/);
+  setTimeout(() => {
+    expect(url).toMatch(/accounts\.google\.com/);
+  }, 1000);
 });
 
 test('When signed in, show logout', async () => {
