@@ -12,4 +12,6 @@ module.exports = {
     useUnifiedTopology: true,
   },
   redisUrl: 'redis://127.0.0.1:6379',
+  accessKeyId: 'AKIASYEXJ6Y5MSJ74M5C',
+  secretAccessKey: '',
 };

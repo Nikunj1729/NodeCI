@@ -7,6 +7,18 @@ class BlogShow extends Component {
     this.props.fetchBlog(this.props.match.params._id);
   }
 
+  renderImage() {
+    if (this.props.blog.imageUrl) {
+      return (
+        <img
+          src={`https://nikunj-blog-images.s3.ap-south-1.amazonaws.com/${this.props.blog.imageUrl}`}
+          style={{ maxWidth: '800px' }}
+        />
+      );
+    }
+    return null;
+  }
+
   render() {
     if (!this.props.blog) {
       return '';
@@ -18,6 +30,7 @@ class BlogShow extends Component {
       <div>
         <h3>{title}</h3>
         <p>{content}</p>
+        {this.renderImage()}
       </div>
     );
   }
